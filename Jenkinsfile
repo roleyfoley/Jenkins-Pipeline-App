@@ -1,10 +1,6 @@
 pipeline {
     agent {
-        node { 
-            docker.withServer{'tcp://192.168.99.100:2376', 'LocalDockerHost') {
-                docker.image('node:7-alpine')
-            }
-        }    
+        docker { image 'node:7-alpine' }  
     }
     
     stages {
